@@ -1,0 +1,39 @@
+﻿
+
+
+
+
+@model List<PROJECT_WEB_ADMIN.Models.Customer>
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_CustomLayout.cshtml";
+}
+
+
+
+<h2> INFORMATIONS OF CUSTOMER</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+
+        </tr>
+    </thead>
+
+    <ul>
+        @foreach (var item in Model)
+        {
+
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Phone</td>
+            <td>@item.Email</td>
+        </tr>
+    }
+        </ul>
+
+    </table>

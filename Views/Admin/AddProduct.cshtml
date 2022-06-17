@@ -1,0 +1,75 @@
+﻿
+@model PROJECT_WEB_ADMIN.Models.Product
+
+@{
+    ViewBag.Title = "AddProduct";
+}
+
+<a href="~/Admin/Dashboard">Home Page</a>
+
+<h2>Add Product</h2>
+
+@using (Html.BeginForm("SaveProduct", "Admin", FormMethod.Post))
+{@Html.ValidationSummary(false, "", new { @class = "text - danger" })
+
+
+
+<div class="mb-3">
+
+    <label for="ID " class="form-label"> ID:</label><br>
+    @Html.DropDownListFor(m => m.CategoryID, new SelectList(ViewBag.Category, "ID", "Name"), new { @class = "form-control" }) <br>
+</div>
+
+
+
+
+
+
+<div class="mb-3">
+    <label for="Name" class="form-label"> Name:</label><br>
+    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" }) <br>
+    @*Html.ValidationMessageFor(m => m.cToyId, "", new  { @class = "text - danger"})*@
+</div>
+
+
+<div class="mb-3">
+    <label for="Size" class="form-label">Size </label>><br>
+    @Html.TextAreaFor(m => m.Size, new { @class = "form-control" }) <br>
+    @*Html.ValidationMessageFor(m => m.cToyId, "", new  { @class = "text - danger"})*@
+</div>
+
+
+<div class="mb-3">
+    <label for="Sex" class="form-label">Sex </label>><br>
+    @Html.TextAreaFor(m => m.Sex, new { @class = "form-control" }) <br>
+</div>
+
+
+<div class="mb-3">
+    <label for="Form" class="form-label">Form </label>><br>
+    @Html.TextAreaFor(m => m.Form, new { @class = "form-control" }) <br>
+</div>
+
+
+
+<div class="mb-3">
+    <label for="Quantity" class="form-label">Quantity  </label>><br>
+    @Html.TextAreaFor(m => m.Quantity, new { @class = "form-control" }) <br>
+</div>
+
+
+<div class="mb-3">
+    <label for="Price" class="form-label">Price</label>><br>
+    @Html.TextBoxFor(m => m.Price, new { @class = "form-control" }) <br>
+
+</div>
+
+
+<div class="mb-3">
+    <label for="Image" class="form-label">Image </label>><br>
+    @Html.TextAreaFor(m => m.Image, new { @class = "form-control" }) <br>
+</div>
+
+
+<input type="submit" value="Submit" class="btn btn-primary" />
+}

@@ -1,0 +1,53 @@
+﻿
+@*@model List<PROJECT_WEB_ADMIN.Models.Product>
+@{
+    ViewBag.Title = "Dashboard";
+
+    Layout = "~/Views/Shared/_CustomLayout.cshtml";
+}
+<style>
+    img {
+        width: 80px;
+        height: 100px;
+    }
+</style>
+<h2>Products</h2>
+
+
+
+
+@Html.ActionLink("Add New", "AddProduct")
+
+
+
+
+<h1>Products List</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Toy Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <th scope="row">1</th>
+                <td>@item.vToyName</td>
+                <td>@item.vToyDescription</td>
+                <td>@item.mToyRate</td>
+                <td><img src="~/Content/Images/@item.vToyImgPath" /></td>
+                <td>
+                    <a href="~/Admin/ProductDetails/@item.cToyId">Details</a> |
+                    <a href="~/Admin/EditProduct/@item.cToyId">Edit</a> |
+                    <a href="~/Admin/DeleteProduct/@item.cToyId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@

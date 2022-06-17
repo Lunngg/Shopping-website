@@ -1,0 +1,53 @@
+﻿
+@model PROJECT_WEB_ADMIN.Models.Product
+
+@{
+    Layout = "~/Views/Shared/_CustomLayout.cshtml";
+    ViewBag.Title = "EditProduct";
+}
+
+<h2>Edit Product</h2>
+
+
+@using (Html.BeginForm("UpdateProduct", "Admin", FormMethod.Post))
+{
+    <div class="mb-3">
+        <label for="ID" class="form-label"> ID:</label><br>
+        @Html.TextBoxFor(m => m.ProductId, new { @class = "form-control" }) <br>
+
+    </div>
+    <div class="mb-3">
+        <label for="Name" class="form-label"> Name:</label><br>
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" }) <br>
+
+    </div>
+
+    <div class="mb-3">
+        <label for="Size" class="form-label">Size </label>><br>
+        @Html.TextAreaFor(m => m.Size, new { @class = "form-control" }) <br>
+
+    </div>
+
+    <div class="mb-3">
+        <label for="Quantity" class="form-label">Quantity </label>><br>
+        @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control" }) <br>
+
+    </div>
+
+    <div class="mb-3">
+        <label for="Price" class="form-label">Price </label>><br>
+        @Html.TextBoxFor(m => m.Price, new { @class = "form-control" }) <br>
+
+    </div>
+    <div class="mb-3">
+        <label for="Image" class="form-label">Image </label><br>
+        @Html.TextBoxFor(m => m.Image, new { @class = "form-control" }) <br>
+
+    </div>
+
+
+    <input type="submit" value="Update" class="btn btn-primary" />
+}
+
+
+

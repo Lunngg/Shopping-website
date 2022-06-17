@@ -1,0 +1,70 @@
+﻿@model List<PROJECT_WEB_ADMIN.Models.Product>
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_CustomLayout.cshtml";
+}
+
+<h2>Admin Setting Page</h2>
+
+
+@Html.ActionLink("Add New Product", "AddProduct")
+
+<style>
+    img {
+        width: 100px;
+        height: 100px;
+    }
+</style>
+
+
+<table class="table">
+
+    <h1>LIST OF PRODUCTS</h1>
+
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Size</th>
+            <th scope="col">Sex</th>
+            <th scope="col">Form</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image of Product</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.Name</td>
+                <td>@item.Size </td>
+                <td>@item.Sex </td>
+                <td>@item.Form</td>
+                <td>@item.Quantity</td>
+                <td>@item.Price</td>
+                <td><img src=" ~/Content/Images/@item.Image" /> </td>
+                <td>
+                    <a href="~/Admin/ProductDetails/@item.ProductId">Details</a> <br /> |
+                    <a href="~/Admin/EditProduct?ProductId=@item.ProductId">Edit</a> <br /> |
+                    <a href="~/Admin/DeleteProduct?ProductId=@item.ProductId">Delete</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+
+
+
+
+
+
+
+

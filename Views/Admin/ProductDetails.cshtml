@@ -1,0 +1,21 @@
+﻿@model PROJECT_WEB_ADMIN.Models.Product
+
+
+
+@{
+    ViewBag.Title = "ProductDetails";
+    Layout = "~/Views/Shared/_CustomLayout.cshtml";
+}
+
+
+<h2>INFORMATIONS OF PRODUCT </h2>
+
+
+<ul>
+    <li>@Model.Name </li>
+    <li> @Model.Size</li>
+    <li>@Model.Form </li>
+    <li>@Model.Price </li>
+    <li>@Model.Quantity </li>
+
+</ul>
